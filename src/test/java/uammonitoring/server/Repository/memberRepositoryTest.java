@@ -1,34 +1,49 @@
-package uammonitoring.server.config;
+package uammonitoring.server.Repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+import uammonitoring.server.Entity.Qmember;
 import uammonitoring.server.Entity.member;
-import uammonitoring.server.Repository.memberRepository;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
-import static uammonitoring.server.Entity.Qmember.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
-public class QuerydslTest {
-
-    @Autowired
-    JPAQueryFactory queryFactory;
+class memberRepositoryTest {
 
     @Autowired
     memberRepository repository;
-
+    @Autowired
+    JPAQueryFactory queryFactory;
     @Autowired
     EntityManager em;
 
     @Test
-    public void Querydsl() throws Exception{
+    public void JPATest() throws Exception{
+        //given
+        member createMember = member.builder()
+                .name("test")
+                .password("test")
+                .build();
+
+        //when
+        repository.save(createMember);
+        Long id = createMember.getId();
+        member findMember = repository.findById(id).get();
+
+        //then
+        assertThat(findMember.getId()).isEqualTo(createMember.getId());
+    }
+
+
+    @Test
+    public void QuerydslTest() throws Exception{
         //given
         String name = "test";
         uammonitoring.server.Entity.member createMember = uammonitoring.server.Entity.member.builder()
@@ -38,13 +53,12 @@ public class QuerydslTest {
 
         //when
         repository.save(createMember);
-
         em.flush();
         em.clear();
 
         List<member> members = queryFactory
-                .selectFrom(member)
-                .where(member.name.eq(name))
+                .selectFrom(Qmember.member)
+                .where(Qmember.member.name.eq(name))
                 .fetch();
 
         //then
