@@ -3,9 +3,9 @@ package uammonitoring.server.Service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import uammonitoring.server.Entity.currentPosition;
+import uammonitoring.server.domain.Adsb.currentPosition;
 import uammonitoring.server.domain.Adsb.currentTime;
-import uammonitoring.server.domain.Adsb.flightData;
+import uammonitoring.server.Entity.flightData;
 import uammonitoring.server.domain.Adsb.flightIdentifier;
 
 @SpringBootTest

@@ -1,4 +1,4 @@
-package uammonitoring.server.Entity;
+package uammonitoring.server.domain.Adsb;
 
 import lombok.*;
 

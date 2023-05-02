@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
-import uammonitoring.server.domain.Adsb.flightData;
+import uammonitoring.server.Entity.flightData;
 
 @Service
 @Slf4j
