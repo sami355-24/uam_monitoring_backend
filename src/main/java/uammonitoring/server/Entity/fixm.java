@@ -1,10 +1,12 @@
 package uammonitoring.server.Entity;
 
 import jakarta.persistence.*;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 
 import java.util.List;
 
@@ -12,10 +14,12 @@ import java.util.List;
 @Getter @Setter
 @ToString
 @Builder
+
 public class fixm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+
     private Long id;
 
     private String uamIdentification;
