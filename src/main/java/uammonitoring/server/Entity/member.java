@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class member {
 
     @Id
