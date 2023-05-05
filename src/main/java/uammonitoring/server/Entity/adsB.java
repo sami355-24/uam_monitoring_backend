@@ -1,24 +1,31 @@
 package uammonitoring.server.Entity;
 
-import jakarta.persistence.*;
-import uammonitoring.server.Entity.Adsb.currentPosition;
-import uammonitoring.server.Entity.Adsb.currentTime;
-import uammonitoring.server.Entity.Common.flightIdentifier;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
 @Entity
-public class adsB {
+@Getter @Setter
+@ToString
+@Builder
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+public class adsb {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "adsB_id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "flightIdentifier_id")
-    private flightIdentifier flightIdentifier;
+    private String uamIdentification;
+    private String uamCurrentDate;
+    private String uamCurrentTime;
+    private String uamCurrentTimeReference;
 
-    @Embedded
-    private currentTime currentTime;
+    private String uamCurrentAltitude;
+    private String uamCurrentLongitude;
+    private String uamCurrentLatitude;
 
-    @Embedded
-    private currentPosition currentPosition;
+    public adsb() {
+    }
 }
