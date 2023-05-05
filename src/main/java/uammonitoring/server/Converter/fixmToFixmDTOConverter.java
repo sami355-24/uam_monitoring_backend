@@ -1,8 +1,9 @@
 package uammonitoring.server.Converter;
 
 import org.springframework.core.convert.converter.Converter;
+import uammonitoring.server.DTO.Common.FlightIdentifier;
 import uammonitoring.server.DTO.fixmDTO;
-import uammonitoring.server.DTO.partOfFixmDTO.*;
+import uammonitoring.server.DTO.PartOfFixmDTO.*;
 import uammonitoring.server.Entity.fixm;
 import uammonitoring.server.Entity.route;
 

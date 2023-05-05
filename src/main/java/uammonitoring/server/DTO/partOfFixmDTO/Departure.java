@@ -1,4 +1,4 @@
-package uammonitoring.server.DTO.partOfFixmDTO;
+package uammonitoring.server.DTO.PartOfFixmDTO;
 
 
 import lombok.AllArgsConstructor;
