@@ -4,7 +4,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import uammonitoring.server.DTO.partOfFixmDTO.*;
+import uammonitoring.server.DTO.Common.FlightIdentifier;
+import uammonitoring.server.DTO.PartOfFixmDTO.*;
 
 import java.util.List;
 
