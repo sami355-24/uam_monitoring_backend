@@ -6,8 +6,7 @@ import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import uammonitoring.server.Entity.Qmember;
-import uammonitoring.server.Entity.member;
+import uammonitoring.server.Entity.User;
 
 import java.util.List;
 
@@ -15,10 +14,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @Transactional
-class memberRepositoryTest {
+class userRepositoryTest {
 
     @Autowired
-    memberRepository repository;
+    UserRepository repository;
     @Autowired
     JPAQueryFactory queryFactory;
     @Autowired
@@ -27,18 +26,18 @@ class memberRepositoryTest {
     @Test
     public void JPATest() throws Exception{
         //given
-        member createMember = member.builder()
+        User createUser = User.builder()
                 .name("test")
                 .password("test")
                 .build();
 
         //when
-        repository.save(createMember);
-        Long id = createMember.getId();
-        member findMember = repository.findById(id).get();
+        repository.save(createUser);
+        Long id = createUser.getId();
+        User findUser = repository.findById(id).get();
 
         //then
-        assertThat(findMember.getId()).isEqualTo(createMember.getId());
+        assertThat(findUser.getId()).isEqualTo(createUser.getId());
     }
 
 
@@ -46,23 +45,23 @@ class memberRepositoryTest {
     public void QuerydslTest() throws Exception{
         //given
         String name = "test";
-        uammonitoring.server.Entity.member createMember = uammonitoring.server.Entity.member.builder()
+        User createUser = User.builder()
                 .name(name)
                 .password("test")
                 .build();
 
         //when
-        repository.save(createMember);
+        repository.save(createUser);
         em.flush();
         em.clear();
 
-        List<member> members = queryFactory
+        List<User> Users = queryFactory
                 .selectFrom(Qmember.member)
                 .where(Qmember.member.name.eq(name))
                 .fetch();
 
         //then
-        assertThat(members.size()).isEqualTo(1);
-        assertThat(members.get(0).getName()).isEqualTo(name);
+        assertThat(Users.size()).isEqualTo(1);
+        assertThat(Users.get(0).getName()).isEqualTo(name);
     }
 }
