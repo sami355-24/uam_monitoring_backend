@@ -1,4 +1,4 @@
-package uammonitoring.server.Service;
+package uammonitoring.server.Service.Impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import uammonitoring.server.DTO.fixmDTO;
 import uammonitoring.server.Entity.fixm;
 import uammonitoring.server.Repository.fixmRepository;
+import uammonitoring.server.Service.fixmService;
 
 import java.util.List;
 
