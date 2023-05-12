@@ -45,4 +45,10 @@ public class adsbServiceImpl implements adsbService {
             session.sendMessage(new TextMessage(DTO.toString()));
         }
     }
+
+    @Override
+    public void completeFlight(String uamIdentification) {
+        repository.deleteByuamIdentification(uamIdentification);
+    }
+
 }
