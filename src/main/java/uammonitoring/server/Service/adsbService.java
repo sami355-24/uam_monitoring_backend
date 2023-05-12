@@ -13,4 +13,6 @@ public interface adsbService {
 
     void sendAdsb(adsbDTO DTO) throws IOException;
 
+    void completeFlight(String uamIdentification);
+
 }

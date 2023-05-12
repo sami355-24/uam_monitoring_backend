@@ -35,4 +35,17 @@ class adsbRepositoryTest {
             log.info("findAllAdsbTest : {}", adsb.toString());
         }
     }
+
+    @Test
+    public void deleteByuamIdentificationTest() throws Exception{
+        //given
+        String uamIdentification = "UAL123";
+
+        //when
+        repository.deleteByuamIdentification(uamIdentification);
+
+        //then
+        List<adsb> all = repository.findAll();
+        Assertions.assertThat(all).isEmpty();
+    }
 }

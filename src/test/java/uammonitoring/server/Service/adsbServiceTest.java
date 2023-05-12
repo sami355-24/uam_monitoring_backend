@@ -35,4 +35,17 @@ public class adsbServiceTest {
             log.info("findAllAdsbTest : {}", adsbDTO.toString());
         }
     }
+
+    @Test
+    public void completeFlightTest() throws Exception{
+        //given
+        String uamIdentification = "UAL123";
+
+        //when
+        service.completeFlight(uamIdentification);
+
+        //then
+        List<adsbDTO> allAdsb = service.findAllAdsb();
+        assertThat(allAdsb).isEmpty();
+    }
 }
