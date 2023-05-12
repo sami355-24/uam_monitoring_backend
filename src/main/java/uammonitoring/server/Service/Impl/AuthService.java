@@ -1,4 +1,4 @@
-package uammonitoring.server.Service;
+package uammonitoring.server.Service.Impl;
 
 import io.jsonwebtoken.Claims;
 import jakarta.transaction.Transactional;

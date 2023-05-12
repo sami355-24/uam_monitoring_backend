@@ -1,4 +1,4 @@
-package uammonitoring.server.Service;
+package uammonitoring.server.Service.Impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +10,7 @@ import uammonitoring.server.Compnent.adsbHandler;
 import uammonitoring.server.DTO.adsbDTO;
 import uammonitoring.server.Entity.adsb;
 import uammonitoring.server.Repository.adsbRepository;
+import uammonitoring.server.Service.adsbService;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class adsbServiceImpl implements adsbService{
+public class adsbServiceImpl implements adsbService {
 
     private final adsbRepository repository;
     private final ConversionService conversionService;

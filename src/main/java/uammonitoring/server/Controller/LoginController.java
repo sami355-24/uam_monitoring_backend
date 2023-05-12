@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uammonitoring.server.Config.security.jwt.TokenDto;
 import uammonitoring.server.DTO.LoginRequestDto;
-import uammonitoring.server.Service.AuthService;
+import uammonitoring.server.Service.Impl.AuthService;
 
 @RestController
 @RequiredArgsConstructor

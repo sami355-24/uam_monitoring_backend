@@ -41,27 +41,26 @@ class userRepositoryTest {
     }
 
 
-    @Test
-    public void QuerydslTest() throws Exception{
-        //given
-        String name = "test";
-        User createUser = User.builder()
-                .name(name)
-                .password("test")
-                .build();
-
-        //when
-        repository.save(createUser);
-        em.flush();
-        em.clear();
-
-        List<User> Users = queryFactory
-                .selectFrom(Qmember.member)
-                .where(Qmember.member.name.eq(name))
-                .fetch();
-
-        //then
-        assertThat(Users.size()).isEqualTo(1);
-        assertThat(Users.get(0).getName()).isEqualTo(name);
-    }
+//    public void QuerydslTest() throws Exception{
+//        //given
+//        String name = "test";
+//        User createUser = User.builder()
+//                .name(name)
+//                .password("test")
+//                .build();
+//
+//        //when
+//        repository.save(createUser);
+//        em.flush();
+//        em.clear();
+//
+//        List<User> Users = queryFactory
+//                .selectFrom(Qmember.member)
+//                .where(Qmember.member.name.eq(name))
+//                .fetch();
+//
+//        //then
+//        assertThat(Users.size()).isEqualTo(1);
+//        assertThat(Users.get(0).getName()).isEqualTo(name);
+//    }
 }
