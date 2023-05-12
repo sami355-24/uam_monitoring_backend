@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uammonitoring.server.DTO.adsbDTO;
 import uammonitoring.server.Service.adsbService;
@@ -31,5 +32,8 @@ public class adsbController {
         return allAdsb;
     }
 
-
+    @GetMapping("/completeFlight")
+    public void completeFlight(@RequestParam String uamIdentification) {
+        service.completeFlight(uamIdentification);
+    }
 }
