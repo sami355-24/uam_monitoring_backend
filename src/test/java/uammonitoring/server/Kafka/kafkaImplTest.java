@@ -18,8 +18,8 @@ class kafkaImplTest {
     public void sendKafkaMessageTest() throws Exception{
         //given
         FlightIdentifier flightIdentifier = new FlightIdentifier("UAL123");
-        currentTime time = new currentTime("2023-05-15", "14:12:35", "UTC");
-        currentPosition position = new currentPosition("400", "126.9525465", "37.5453577");
+        currentTime time = new currentTime("2023-05-15", "14:12:37", "UTC");
+        currentPosition position = new currentPosition(400, 126.9525465, 37.5453577);
 
         adsbDTO DTO = adsbDTO.builder()
                 .flightIdentifier(flightIdentifier)

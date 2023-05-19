@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class currentPosition {
-    private String altitude;
-    private String longitude;
-    private String latitude;
+    private double altitude;
+    private double longitude;
+    private double latitude;
 }

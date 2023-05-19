@@ -19,7 +19,6 @@ class vertiportRepositoryTest {
     private vertiportRepository repository;
 
     @Test
-    @Transactional
     public void insertVertiportTest() throws Exception{
         //given
         List<String> latitudes = List.of("1", "2", "3");
