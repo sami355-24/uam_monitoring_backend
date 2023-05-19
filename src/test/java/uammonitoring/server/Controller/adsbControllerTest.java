@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.bind.annotation.RequestParam;
 import uammonitoring.server.DTO.adsbDTO;
@@ -42,5 +43,21 @@ class adsbControllerTest {
         //then
         List<adsbDTO> adsb = controller.findAdsb();
         assertThat(adsb).isEmpty();
+    }
+
+    @Test
+    public void adsbStatus() throws Exception{
+        //given
+        String Url = "/status?uamIdentification=UAL123";
+
+        //when
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(Url))
+                .andExpect(status().isOk())
+                .andDo(print())
+                .andReturn();
+
+        //then
+        String contentAsString = mvcResult.getResponse().getContentAsString();
+        System.out.printf("contentAsString : %s\n", contentAsString);
     }
 }
