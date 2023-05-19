@@ -8,4 +8,6 @@ import uammonitoring.server.Entity.adsb;
 public interface adsbRepository extends JpaRepository<adsb, Long> {
 
     void deleteByuamIdentification(String uamIdentification);
+
+   boolean existsByUamIdentification(String uamIdentification);
 }
