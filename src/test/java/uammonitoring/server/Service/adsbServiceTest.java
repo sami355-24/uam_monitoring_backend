@@ -11,6 +11,7 @@ import uammonitoring.server.DTO.adsbDTO;
 import uammonitoring.server.Entity.adsb;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -55,9 +56,9 @@ public class adsbServiceTest {
         String uamIdentification = "UAL123";
 
         //when
-        boolean result = service.existsByUamIdentification(uamIdentification);
+        Map<String, Boolean> result = service.existsByUamIdentification(uamIdentification);
 
         //then
-        assertThat(result).isTrue();
+        assertThat(result.get("status")).isTrue();
     }
 }
