@@ -48,4 +48,16 @@ class adsbRepositoryTest {
         List<adsb> all = repository.findAll();
         Assertions.assertThat(all).isEmpty();
     }
+
+    @Test
+    public void statusOfUAM() throws Exception{
+        //given
+        String uamIdentification = "UAL1232";
+
+        //when
+        boolean result = repository.existsByUamIdentification(uamIdentification);
+
+        //then
+        Assertions.assertThat(result).isFalse();
+    }
 }
