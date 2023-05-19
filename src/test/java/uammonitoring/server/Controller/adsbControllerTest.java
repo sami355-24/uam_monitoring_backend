@@ -48,7 +48,7 @@ class adsbControllerTest {
     @Test
     public void adsbStatus() throws Exception{
         //given
-        String Url = "/status?uamIdentification=UAL123";
+        String Url = "/status?uamIdentification=BKDG001";
 
         //when
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(Url))
@@ -57,6 +57,8 @@ class adsbControllerTest {
                 .andReturn();
 
         //then
+        List<adsbDTO> adsb = controller.findAdsb();
+        assertThat(adsb).isEmpty();
         String contentAsString = mvcResult.getResponse().getContentAsString();
         System.out.printf("contentAsString : %s\n", contentAsString);
     }

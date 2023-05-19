@@ -9,5 +9,5 @@ public interface adsbRepository extends JpaRepository<adsb, Long> {
 
     void deleteByuamIdentification(String uamIdentification);
 
-   boolean existsByUamIdentification(String uamIdentification);
+    boolean existsByUamIdentification(String uamIdentification);
 }

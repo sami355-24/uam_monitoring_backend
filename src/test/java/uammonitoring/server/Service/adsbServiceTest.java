@@ -1,14 +1,11 @@
 package uammonitoring.server.Service;
 
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import uammonitoring.server.DTO.adsbDTO;
-import uammonitoring.server.Entity.adsb;
 
 import java.util.List;
 import java.util.Map;
@@ -40,10 +37,9 @@ public class adsbServiceTest {
     @Test
     public void completeFlightTest() throws Exception{
         //given
-        String uamIdentification = "UAL123";
 
         //when
-        service.completeFlight(uamIdentification);
+        service.completeFlight("BKDG001");
 
         //then
         List<adsbDTO> allAdsb = service.findAllAdsb();

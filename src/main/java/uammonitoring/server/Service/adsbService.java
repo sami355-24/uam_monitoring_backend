@@ -14,7 +14,11 @@ public interface adsbService {
 
     void sendAdsb(adsbDTO DTO) throws IOException;
 
-    void completeFlight(String uamIdentification);
+    void completeFlight(String UamIdentification);
 
     Map<String, Boolean> existsByUamIdentification(String uamIdentification);
+
+    adsbDTO stringToDTO(String data);
+
+    void receiveKafkaMessage(String data) throws IOException;
 }
