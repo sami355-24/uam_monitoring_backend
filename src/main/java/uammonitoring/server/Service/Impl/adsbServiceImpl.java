@@ -2,6 +2,7 @@ package uammonitoring.server.Service.Impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionService;
@@ -51,6 +52,7 @@ public class adsbServiceImpl implements adsbService {
     }
 
     @Override
+    @Transactional
     public void completeFlight(String UamIdentification) {
         repository.deleteByuamIdentification(UamIdentification);
     }
