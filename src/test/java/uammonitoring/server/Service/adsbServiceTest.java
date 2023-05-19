@@ -48,4 +48,16 @@ public class adsbServiceTest {
         List<adsbDTO> allAdsb = service.findAllAdsb();
         assertThat(allAdsb).isEmpty();
     }
+
+    @Test
+    public void existsByUamIdentificationTest() throws Exception{
+        //given
+        String uamIdentification = "UAL123";
+
+        //when
+        boolean result = service.existsByUamIdentification(uamIdentification);
+
+        //then
+        assertThat(result).isTrue();
+    }
 }
