@@ -36,4 +36,9 @@ public class adsbController {
     public void completeFlight(@RequestParam String uamIdentification) {
         service.completeFlight(uamIdentification);
     }
+
+    @GetMapping("/status")
+    public Map<String, Boolean> adsbStatus(@RequestParam String uamIdentification) {
+        return service.existsByUamIdentification(uamIdentification);
+    }
 }
