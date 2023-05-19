@@ -39,7 +39,7 @@ class adsbRepositoryTest {
     @Test
     public void deleteByuamIdentificationTest() throws Exception{
         //given
-        String uamIdentification = "UAL123";
+        String uamIdentification = "BKDG001";
 
         //when
         repository.deleteByuamIdentification(uamIdentification);

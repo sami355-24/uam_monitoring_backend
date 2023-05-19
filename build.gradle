@@ -20,12 +20,12 @@ repositories {
 
 dependencies {
 	//mysql
-//	runtimeOnly 'com.mysql:mysql-connector-j'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 	implementation 'mysql:mysql-connector-java:8.0.32'
 	implementation 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
 
 	//h2
-	runtimeOnly 'com.h2database:h2'
+//	runtimeOnly 'com.h2database:h2'
 
 	//spring-doc
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
@@ -45,7 +45,6 @@ dependencies {
 
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-//	implementation 'org.springframework.kafka:kafka-clients'
 	implementation 'org.springframework.kafka:spring-kafka'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

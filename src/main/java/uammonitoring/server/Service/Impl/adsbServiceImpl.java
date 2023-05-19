@@ -1,5 +1,7 @@
 package uammonitoring.server.Service.Impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.ConversionService;
@@ -49,8 +51,8 @@ public class adsbServiceImpl implements adsbService {
     }
 
     @Override
-    public void completeFlight(String uamIdentification) {
-        repository.deleteByuamIdentification(uamIdentification);
+    public void completeFlight(String UamIdentification) {
+        repository.deleteByuamIdentification(UamIdentification);
     }
 
     @Override
@@ -59,6 +61,26 @@ public class adsbServiceImpl implements adsbService {
         HashMap<String, Boolean> result = new HashMap<>();
         result.put("status", status);
         return result;
+    }
+
+    @Override
+    public adsbDTO stringToDTO(String json) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        adsbDTO dto;
+        try {
+            dto = objectMapper.readValue(json, adsbDTO.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return dto;
+    }
+
+    @Override
+    public void receiveKafkaMessage(String data) throws IOException {
+        adsbDTO DTO = stringToDTO(data);
+        log.info("DTO 타입 : {}", DTO.getClass());
+        saveAdsb(DTO);
+        sendAdsb(DTO);
     }
 
 }
