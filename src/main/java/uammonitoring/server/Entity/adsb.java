@@ -22,9 +22,9 @@ public class adsb {
     private String uamCurrentTime;
     private String uamCurrentTimeReference;
 
-    private String uamCurrentAltitude;
-    private String uamCurrentLongitude;
-    private String uamCurrentLatitude;
+    private double uamCurrentAltitude;
+    private double uamCurrentLongitude;
+    private double uamCurrentLatitude;
 
     public adsb() {
     }
