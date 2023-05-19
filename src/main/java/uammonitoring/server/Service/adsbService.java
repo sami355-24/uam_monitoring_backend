@@ -15,4 +15,5 @@ public interface adsbService {
 
     void completeFlight(String uamIdentification);
 
+    boolean existsByUamIdentification(String uamIdentification);
 }

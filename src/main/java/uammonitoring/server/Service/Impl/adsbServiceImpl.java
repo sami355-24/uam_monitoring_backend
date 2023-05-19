@@ -51,4 +51,9 @@ public class adsbServiceImpl implements adsbService {
         repository.deleteByuamIdentification(uamIdentification);
     }
 
+    @Override
+    public boolean existsByUamIdentification(String uamIdentification) {
+        return repository.existsByUamIdentification(uamIdentification);
+    }
+
 }
