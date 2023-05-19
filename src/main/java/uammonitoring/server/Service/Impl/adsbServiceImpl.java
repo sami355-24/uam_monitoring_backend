@@ -13,7 +13,9 @@ import uammonitoring.server.Repository.adsbRepository;
 import uammonitoring.server.Service.adsbService;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -49,6 +51,14 @@ public class adsbServiceImpl implements adsbService {
     @Override
     public void completeFlight(String uamIdentification) {
         repository.deleteByuamIdentification(uamIdentification);
+    }
+
+    @Override
+    public Map<String, Boolean> existsByUamIdentification(String uamIdentification) {
+        boolean status = repository.existsByUamIdentification(uamIdentification);
+        HashMap<String, Boolean> result = new HashMap<>();
+        result.put("status", status);
+        return result;
     }
 
 }

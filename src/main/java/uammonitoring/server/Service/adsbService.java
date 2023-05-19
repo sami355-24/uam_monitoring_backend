@@ -4,6 +4,7 @@ import uammonitoring.server.DTO.adsbDTO;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public interface adsbService {
 
@@ -15,4 +16,5 @@ public interface adsbService {
 
     void completeFlight(String uamIdentification);
 
+    Map<String, Boolean> existsByUamIdentification(String uamIdentification);
 }
