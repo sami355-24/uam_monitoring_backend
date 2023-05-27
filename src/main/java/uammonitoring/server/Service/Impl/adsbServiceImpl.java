@@ -44,10 +44,11 @@ public class adsbServiceImpl implements adsbService {
 
     @Override
     public void sendAdsb(adsbDTO DTO) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
         List<WebSocketSession> list = handler.getList();
         log.info("list.length : {}", list.size());
         for (WebSocketSession session : list) {
-            session.sendMessage(new TextMessage(DTO.toString()));
+            session.sendMessage(new TextMessage(objectMapper.writeValueAsString(DTO)));
         }
     }
 
