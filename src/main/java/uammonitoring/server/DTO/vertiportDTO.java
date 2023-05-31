@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class vertiportDTO {
 
+    private Long id;
+    private String name;
     private String latitude;
     private String longitude;
 }

@@ -22,6 +22,8 @@ public class vertiportServiceImpl implements vertiportService {
         List<vertiportDTO> result = new ArrayList<>();
         for (vertiport vertiport : vertiports) {
             vertiportDTO dto = new vertiportDTO();
+            dto.setId(vertiport.getId());
+            dto.setName(vertiport.getName());
             dto.setLatitude(vertiport.getLatitude());
             dto.setLongitude(vertiport.getLongitude());
             result.add(dto);
