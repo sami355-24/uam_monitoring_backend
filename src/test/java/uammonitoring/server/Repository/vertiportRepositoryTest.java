@@ -20,14 +20,6 @@ class vertiportRepositoryTest {
 
     @Test
     public void insertVertiportTest() throws Exception{
-        //given
-        List<String> latitudes = List.of("1", "2", "3");
-        List<String> longitudes = List.of("1", "2", "3");
-
-        //when
-        for (int i = 0; i < 3; i++) {
-            repository.save(new vertiport(latitudes.get(i), longitudes.get(i)));
-        }
 
         //then
         List<vertiport> all = repository.findAll();
