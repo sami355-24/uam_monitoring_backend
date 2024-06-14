@@ -174,8 +174,8 @@
 '2023 한국정보기술학회 하계 종합학술 대회'에서 우수 논문상을 수상하였습니다.
 그리고 프로젝트 내용들을 개발자 커뮤니티인 `Devocean`에 기고하였습니다.
 <br><br>
-논문은 [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11485532)에 등록되어 있으며, 기고 글은
-[도심항공모빌리티를 위한 UX](https://devocean.sk.com/blog/techBoardDetail.do?ID=165167)에서 확인하실 수 있습니다.
+논문은 [DBpia](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11485532)에 등록되어 있으며 [원본 문서 레포지토리](https://github.com/uam-monitoring/monitoring_doc/blob/main/625%20%E1%84%80%E1%85%A9%E1%84%83%E1%85%A9%E1%84%8B%E1%85%AA%20%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%AA%E1%86%AF%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%86%AB%20UAM%20%E1%84%86%E1%85%A9%E1%84%82%E1%85%B5%E1%84%90%E1%85%A5%E1%84%85%E1%85%B5%E1%86%BC%20%E1%84%89%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A6%E1%86%B7%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF.pdf)에서 확인할수 있습니다.<br>
+기고 글은 [도심항공모빌리티를 위한 UX](https://devocean.sk.com/blog/techBoardDetail.do?ID=165167)에서 확인하실 수 있습니다.
 
 ### 논문 상세 내용
 
